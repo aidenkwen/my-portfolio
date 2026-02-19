@@ -31,7 +31,7 @@ async function getAccessToken() {
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Cache-Control', 's-maxage=30, stale-while-revalidate=60');
+  res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
 
   try {
     const token = await getAccessToken();
