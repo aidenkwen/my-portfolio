@@ -4,6 +4,7 @@ export function initSpotify() {
   const placeholderEl = document.getElementById('vinyl-art-placeholder');
   const tickerEl = document.getElementById('spotify-ticker');
   const badgeEl = document.getElementById('vinyl-badge');
+  const bgEl = document.getElementById('vinyl-bg');
   if (!el || !artEl || !tickerEl) return;
 
   const defaultText = 'Nothing currently playing';
@@ -36,6 +37,14 @@ export function initSpotify() {
         setTicker(ticker);
         artEl.href.baseVal = data.albumArt || '';
         if (placeholderEl) placeholderEl.style.display = data.albumArt ? 'none' : '';
+        if (bgEl) {
+          if (data.albumArt) {
+            bgEl.style.backgroundImage = `url(${data.albumArt})`;
+            bgEl.classList.add('is-visible');
+          } else {
+            bgEl.classList.remove('is-visible');
+          }
+        }
         el.href = data.url || '#';
         el.classList.toggle('vinyl--playing', !!data.isPlaying);
 
@@ -53,6 +62,7 @@ export function initSpotify() {
         if (placeholderEl) placeholderEl.style.display = '';
         el.classList.remove('vinyl--playing');
         if (badgeEl) badgeEl.style.display = 'none';
+        if (bgEl) bgEl.classList.remove('is-visible');
       }
     } catch {
       setTicker(defaultText);
@@ -60,6 +70,7 @@ export function initSpotify() {
       if (placeholderEl) placeholderEl.style.display = '';
       el.classList.remove('vinyl--playing');
       if (badgeEl) badgeEl.style.display = 'none';
+      if (bgEl) bgEl.classList.remove('is-visible');
     }
   }
 
