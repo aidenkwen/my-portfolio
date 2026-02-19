@@ -1,0 +1,215 @@
+/* ── Bento Grid ── */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-md);
+  padding: var(--space-md);
+  max-width: 1400px;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+/* ── Box base ── */
+.bento__box {
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+
+  /* entry animation initial state */
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.bento__box:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Column spans ── */
+.bento__box[data-size="2"]  { grid-column: span 2; }
+.bento__box[data-size="4"]  { grid-column: span 4; }
+.bento__box[data-size="6"]  { grid-column: span 6; }
+.bento__box[data-size="8"]  { grid-column: span 8; }
+.bento__box[data-size="12"] { grid-column: span 12; }
+
+/* ── Tall boxes (case studies) ── */
+.bento__box--tall {
+  grid-row: span 2;
+}
+
+/* ── Dark boxes (case studies) ── */
+.bento__box--case {
+  background: var(--color-ink);
+  color: #fff;
+  border-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bento__box--case .bento__label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bento__box--case .bento__desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── About box ── */
+.bento__box--about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.bento__profile {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  margin-bottom: var(--space-sm);
+}
+
+.bento__name {
+  font-size: var(--text-xl);
+}
+
+.bento__bio {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+}
+
+.bento__link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: auto;
+}
+
+.bento__link:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ── Label / Title / Desc ── */
+.bento__label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-muted);
+}
+
+.bento__title {
+  font-size: var(--text-lg);
+  margin-top: var(--space-sm);
+}
+
+.bento__desc {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+  margin-top: var(--space-sm);
+  line-height: var(--leading-normal);
+}
+
+/* ── Project boxes ── */
+.bento__box--project {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Rive boxes ── */
+.bento__box--rive {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  background: var(--color-surface);
+}
+
+.bento__canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Marquee box ── */
+.bento__box--marquee {
+  padding: 0;
+  overflow: hidden;
+}
+
+.bento__box--marquee .marquee {
+  padding-block: var(--space-lg);
+}
+
+/* ── Expanded state ── */
+.bento__box.is-expanded {
+  grid-column: 1 / -1;
+  grid-row: span 3;
+  min-height: 480px;
+  z-index: 2;
+}
+
+/* Close button (injected by JS) */
+.bento__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.15);
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 3;
+}
+
+.bento__box.is-expanded .bento__close {
+  opacity: 1;
+}
+
+.bento__box--case .bento__close {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.bento__box:not(.bento__box--case) .bento__close {
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--color-ink);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .bento {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .bento__box[data-size="8"],
+  .bento__box[data-size="12"] {
+    grid-column: 1 / -1;
+  }
+
+  .bento__box[data-size="2"] {
+    grid-column: span 2;
+  }
+
+  .bento__box[data-size="4"] {
+    grid-column: 1 / -1;
+  }
+
+  .bento__box--tall {
+    grid-row: span 1;
+  }
+}
