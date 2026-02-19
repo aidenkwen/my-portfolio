@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
 const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 const REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN;
@@ -19,7 +17,7 @@ async function getAccessToken() {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
       Authorization:
-        'Basic ' + Buffer.from(CLIENT_ID + ':' + CLIENT_SECRET).toString('base64'),
+        'Basic ' + btoa(CLIENT_ID + ':' + CLIENT_SECRET),
     },
     body: params.toString(),
   });
@@ -31,7 +29,7 @@ async function getAccessToken() {
   return data.access_token;
 }
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cache-Control', 's-maxage=30, stale-while-revalidate=60');
 
@@ -81,4 +79,4 @@ module.exports = async function handler(req, res) {
   } catch (err) {
     return res.status(500).json({ error: err.message });
   }
-};
+}
