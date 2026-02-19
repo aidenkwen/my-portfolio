@@ -1,9 +1,9 @@
 export function initSpotify() {
   const el = document.getElementById('spotify');
-  const artEl = document.getElementById('spotify-art');
+  const artEl = document.getElementById('vinyl-art');
   const titleEl = document.getElementById('spotify-title');
   const artistEl = document.getElementById('spotify-artist');
-  const labelEl = el?.querySelector('.spotify__label');
+  const linkEl = el?.querySelector('.vinyl__link');
   if (!el || !artEl || !titleEl || !artistEl) return;
 
   async function fetchNowPlaying() {
@@ -14,20 +14,20 @@ export function initSpotify() {
       if (data.title) {
         titleEl.textContent = data.title;
         artistEl.textContent = data.artist;
-        artEl.src = data.albumArt || '';
-        artEl.alt = data.album || '';
-        el.href = data.url || '#';
-        labelEl.textContent = data.isPlaying ? 'Listening to' : 'Last played';
+        artEl.href.baseVal = data.albumArt || '';
+        if (linkEl) linkEl.href = data.url || '#';
+        el.classList.toggle('vinyl--playing', !!data.isPlaying);
       } else {
         titleEl.textContent = 'Not playing';
         artistEl.textContent = '';
-        artEl.src = '';
-        labelEl.textContent = 'Spotify';
+        artEl.href.baseVal = '';
+        el.classList.remove('vinyl--playing');
       }
     } catch {
       titleEl.textContent = 'Not playing';
       artistEl.textContent = '';
-      artEl.src = '';
+      artEl.href.baseVal = '';
+      el.classList.remove('vinyl--playing');
     }
   }
 
