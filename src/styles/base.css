@@ -19,7 +19,7 @@ body {
   line-height: var(--leading-normal);
   color: var(--color-ink);
   background-color: var(--color-bg);
-  min-width: 1200px;
+  min-width: 0;
 }
 
 img,
@@ -92,6 +92,7 @@ section {
   text-align: center;
   margin-bottom: var(--space-sm);
   scroll-margin-top: 64px;
+  padding-inline: var(--space-md);
 }
 
 .section-heading + section {

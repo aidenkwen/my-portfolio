@@ -17,9 +17,9 @@
 }
 
 .marquee__img {
-  height: 420px;
+  height: clamp(240px, 30vw, 420px);
   width: auto;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   object-fit: cover;
   flex-shrink: 0;
 
@@ -41,22 +41,7 @@
 }
 
 .marquee__fade {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: var(--space-xl);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.marquee__fade--left {
-  left: 0;
-  background: linear-gradient(to right, var(--color-bg), transparent);
-}
-
-.marquee__fade--right {
-  right: 0;
-  background: linear-gradient(to left, var(--color-bg), transparent);
+  display: none;
 }
 
 @keyframes marquee-scroll {

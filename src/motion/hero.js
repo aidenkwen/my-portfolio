@@ -38,17 +38,23 @@ export function initHeroAnimation() {
     stagger: 0.1,
   }, '-=0.2');
 
-  // ── ScrollTrigger: hero exit ──
+  // ── ScrollTrigger: hero exit (desktop only) ──
+  const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
   ScrollTrigger.create({
     trigger: hero,
     start: 'center top',
-    onEnter: () => moveToNav(),
-    onLeaveBack: () => moveToHero(),
+    onEnter: () => { if (!isMobile()) moveToNav(); },
+    onLeaveBack: () => { if (!isMobile()) moveToHero(); },
   });
 
   function moveToNav() {
     if (inNav) return;
     inNav = true;
+
+    braces.forEach((b) => {
+      b.style.minHeight = b.offsetHeight + 'px';
+    });
 
     const state = Flip.getState(labels);
     labels.forEach((label) => navInner.appendChild(label));
@@ -73,6 +79,9 @@ export function initHeroAnimation() {
     Flip.from(state, {
       duration: 0.25,
       ease: 'power2.out',
+      onComplete: () => {
+        braces.forEach((b) => { b.style.minHeight = ''; });
+      },
     });
 
     gsap.to(braceLines, { opacity: 1, duration: 0.2 });
