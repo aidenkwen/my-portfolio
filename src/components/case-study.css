@@ -106,14 +106,9 @@
   margin-top: var(--space-xs);
 }
 
-/* ── Problem Section ── */
+/* ── Section Heading (shared) ── */
 
-.problem {
-  text-align: center;
-  margin-top: var(--space-2xl);
-}
-
-.problem__badge {
+.section__badge {
   font-family: var(--font-sans);
   font-size: var(--text-sm);
   font-weight: 500;
@@ -122,33 +117,42 @@
   color: var(--color-ink-muted);
 }
 
-.problem__heading {
+.section__heading {
   font-family: var(--font-heading);
-  font-size: var(--text-3xl);
+  font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: var(--leading-tight);
   margin-top: var(--space-lg);
-  max-width: 560px;
-  margin-inline: auto;
-  text-wrap: balance;
 }
 
-.problem__subtitle {
+.section__subtitle {
   color: var(--color-ink-muted);
   font-size: var(--text-base);
   line-height: var(--leading-normal);
-  margin-top: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+/* ── Problem Section ── */
+
+.problem {
+  text-align: center;
+  margin-top: var(--space-2xl);
+}
+
+.problem .section__heading,
+.problem .section__subtitle {
   max-width: 560px;
   margin-inline: auto;
-  text-wrap: balance;
 }
 
 .problem__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-md);
   margin-top: var(--space-xl);
+  max-width: 720px;
+  margin-inline: auto;
 }
 
 .problem__card {
@@ -214,10 +218,35 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
   margin-top: var(--space-xl);
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+/* ── Showcase Section (4 / 8 split) ── */
+
+.showcase {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: var(--space-xl);
+  align-items: center;
+  margin-top: var(--space-2xl);
+}
+
+.showcase__media {
+  background: #f3f3f2;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.showcase__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
-  .problem__heading {
+  .section__heading {
     font-size: var(--text-2xl);
   }
 
@@ -231,5 +260,9 @@
 
   .bracket {
     height: 100px;
+  }
+
+  .showcase {
+    grid-template-columns: 1fr;
   }
 }

@@ -32,7 +32,7 @@ export function initSpotify() {
       const data = await res.json();
 
       if (data.title) {
-        const label = data.isPlaying ? 'Now Playing' : 'Last Played';
+        const label = data.isPlaying ? 'Now Listening To' : 'Last Played';
         const ticker = `<span class="vinyl__ticker-label">${label} \u2022 </span><span class="vinyl__ticker-song">${data.title} by ${data.artist}</span>`;
         setTicker(ticker);
         artEl.href.baseVal = data.albumArt || '';
