@@ -62,7 +62,8 @@ export default async function handler(req, res) {
 
     if (recentRes.status === 200) {
       const data = await recentRes.json();
-      const track = data.items?.[0]?.track;
+      const item = data.items?.[0];
+      const track = item?.track;
       if (track) {
         return res.json({
           isPlaying: false,
@@ -71,6 +72,7 @@ export default async function handler(req, res) {
           album: track.album.name,
           albumArt: track.album.images[1]?.url || track.album.images[0]?.url,
           url: track.external_urls.spotify,
+          playedAt: item.played_at,
         });
       }
     }

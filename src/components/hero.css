@@ -357,6 +357,23 @@
   overflow: hidden;
   padding-top: var(--space-lg);
   border-radius: 16px;
+  position: relative;
+}
+
+.vinyl__badge {
+  display: none;
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  line-height: 1.4;
 }
 
 .vinyl__record {
@@ -407,7 +424,11 @@
   to { transform: translateX(-50%); }
 }
 
-.vinyl--playing .vinyl__ticker-track {
+.vinyl__ticker-label {
+  color: var(--color-ink-muted);
+}
+
+.vinyl__ticker-song {
   color: var(--color-ink);
 }
 
