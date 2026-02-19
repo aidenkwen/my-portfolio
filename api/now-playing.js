@@ -7,6 +7,11 @@ const NOW_PLAYING_URL = 'https://api.spotify.com/v1/me/player/currently-playing'
 const RECENTLY_PLAYED_URL = 'https://api.spotify.com/v1/me/player/recently-played?limit=1';
 
 async function getAccessToken() {
+  const params = new URLSearchParams({
+    grant_type: 'refresh_token',
+    refresh_token: REFRESH_TOKEN,
+  });
+
   const res = await fetch(TOKEN_URL, {
     method: 'POST',
     headers: {
@@ -14,13 +19,17 @@ async function getAccessToken() {
       Authorization:
         'Basic ' + Buffer.from(CLIENT_ID + ':' + CLIENT_SECRET).toString('base64'),
     },
-    body: 'grant_type=refresh_token&refresh_token=' + REFRESH_TOKEN,
+    body: params.toString(),
   });
+
   const data = await res.json();
+  if (!data.access_token) {
+    throw new Error('Token error: ' + JSON.stringify(data));
+  }
   return data.access_token;
 }
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cache-Control', 's-maxage=30, stale-while-revalidate=60');
 
@@ -68,6 +77,6 @@ export default async function handler(req, res) {
 
     return res.json({ isPlaying: false, title: null });
   } catch (err) {
-    return res.status(500).json({ error: 'Failed to fetch now playing' });
+    return res.status(500).json({ error: err.message });
   }
-}
+};
