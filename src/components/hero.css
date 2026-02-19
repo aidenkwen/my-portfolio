@@ -335,21 +335,36 @@
 /* ── Vinyl / Spotify ── */
 .vinyl {
   display: flex;
-  justify-content: center;
-}
-
-.vinyl__link {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
+  border-radius: 24px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  overflow: hidden;
   text-decoration: none;
   color: inherit;
+  transition: box-shadow 0.2s ease;
+  padding: var(--space-sm) var(--space-sm) 0;
+}
+
+.vinyl:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.vinyl__box {
+  background: #e8e8e6;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: var(--space-lg);
+  border-radius: 16px;
 }
 
 .vinyl__record {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
+  /* show top ~50% */
+  margin-bottom: -90px;
+  flex-shrink: 0;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -360,38 +375,40 @@
 }
 
 .vinyl--playing .vinyl__record {
-  transform: translateY(-8px);
   animation: vinyl-spin 2s linear infinite;
 }
 
 @keyframes vinyl-spin {
-  to { transform: translateY(-8px) rotate(360deg); }
+  to { transform: rotate(360deg); }
 }
 
-.vinyl__info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 0;
-  max-width: 160px;
-}
-
-.vinyl__title {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  white-space: nowrap;
+.vinyl__ticker {
+  padding: var(--space-sm) 0;
   overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
+  position: relative;
+  white-space: nowrap;
+  mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
 }
 
-.vinyl__artist {
+.vinyl__ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 60s linear infinite;
   font-size: var(--text-sm);
+  font-weight: 500;
   color: var(--color-ink-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
+}
+
+.vinyl__ticker-track span {
+  flex-shrink: 0;
+}
+
+@keyframes ticker-scroll {
+  to { transform: translateX(-50%); }
+}
+
+.vinyl--playing .vinyl__ticker-track {
+  color: var(--color-ink);
 }
 
 /* ── Responsive ── */

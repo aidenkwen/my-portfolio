@@ -138,30 +138,82 @@
             <p class="about__bio">When I'm not working, I love spending time with my two cats, staying active, and listening to music. I've also recently gotten back into reading and collecting comic books.</p>
             <a href="/Aiden Kwen Resume.pdf" target="_blank" class="about__link">Resume <svg class="about__link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line class="arrow-line" x1="2" y1="8" x2="13" y2="8" /><polyline class="arrow-head" points="9.5,4.5 13,8 9.5,11.5" /></svg></a>
           </div>
-          <div class="vinyl" id="spotify">
-            <a class="vinyl__link" href="#" target="_blank" rel="noopener">
+          <a class="vinyl" id="spotify" href="#" target="_blank" rel="noopener">
+            <div class="vinyl__box">
               <div class="vinyl__record">
                 <svg viewBox="0 0 200 200">
                   <defs>
                     <clipPath id="art-clip"><circle cx="100" cy="100" r="30"/></clipPath>
+                    <!-- Hourglass light: top-left to bottom-right -->
+                    <linearGradient id="hg-tl" x1="0.15" y1="0" x2="0.85" y2="1">
+                      <stop offset="0%" stop-color="#fff" stop-opacity="0.16"/>
+                      <stop offset="30%" stop-color="#fff" stop-opacity="0.06"/>
+                      <stop offset="50%" stop-color="#fff" stop-opacity="0"/>
+                      <stop offset="70%" stop-color="#fff" stop-opacity="0.06"/>
+                      <stop offset="100%" stop-color="#fff" stop-opacity="0.16"/>
+                    </linearGradient>
+                    <!-- Hourglass light: top-right to bottom-left -->
+                    <linearGradient id="hg-tr" x1="0.85" y1="0" x2="0.15" y2="1">
+                      <stop offset="0%" stop-color="#fff" stop-opacity="0.14"/>
+                      <stop offset="30%" stop-color="#fff" stop-opacity="0.05"/>
+                      <stop offset="50%" stop-color="#fff" stop-opacity="0"/>
+                      <stop offset="70%" stop-color="#fff" stop-opacity="0.05"/>
+                      <stop offset="100%" stop-color="#fff" stop-opacity="0.14"/>
+                    </linearGradient>
+                    <!-- Vertical highlight band -->
+                    <linearGradient id="hg-vert" x1="0.5" y1="0" x2="0.5" y2="1">
+                      <stop offset="0%" stop-color="#fff" stop-opacity="0.12"/>
+                      <stop offset="35%" stop-color="#fff" stop-opacity="0.02"/>
+                      <stop offset="50%" stop-color="#fff" stop-opacity="0"/>
+                      <stop offset="65%" stop-color="#fff" stop-opacity="0.02"/>
+                      <stop offset="100%" stop-color="#fff" stop-opacity="0.12"/>
+                    </linearGradient>
+                    <!-- Rim light -->
+                    <radialGradient id="rim-light" cx="50%" cy="50%" r="50%">
+                      <stop offset="93%" stop-color="#fff" stop-opacity="0"/>
+                      <stop offset="96.5%" stop-color="#fff" stop-opacity="0.06"/>
+                      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+                    </radialGradient>
                   </defs>
-                  <circle cx="100" cy="100" r="98" fill="#1a1a1a"/>
-                  <circle cx="100" cy="100" r="90" fill="none" stroke="#2a2a2a" stroke-width="0.5"/>
-                  <circle cx="100" cy="100" r="80" fill="none" stroke="#2a2a2a" stroke-width="0.5"/>
-                  <circle cx="100" cy="100" r="70" fill="none" stroke="#2a2a2a" stroke-width="0.5"/>
-                  <circle cx="100" cy="100" r="60" fill="none" stroke="#2a2a2a" stroke-width="0.5"/>
-                  <circle cx="100" cy="100" r="50" fill="none" stroke="#2a2a2a" stroke-width="0.5"/>
-                  <circle cx="100" cy="100" r="40" fill="none" stroke="#2a2a2a" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="98" fill="#111"/>
+                  <circle cx="100" cy="100" r="94" fill="none" stroke="#1e1e1e" stroke-width="0.3"/>
+                  <circle cx="100" cy="100" r="91" fill="none" stroke="#222" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="88" fill="none" stroke="#1e1e1e" stroke-width="0.3"/>
+                  <circle cx="100" cy="100" r="85" fill="none" stroke="#222" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="82" fill="none" stroke="#1e1e1e" stroke-width="0.3"/>
+                  <circle cx="100" cy="100" r="79" fill="none" stroke="#222" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="76" fill="none" stroke="#1e1e1e" stroke-width="0.3"/>
+                  <circle cx="100" cy="100" r="73" fill="none" stroke="#222" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="70" fill="none" stroke="#1e1e1e" stroke-width="0.3"/>
+                  <circle cx="100" cy="100" r="67" fill="none" stroke="#222" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="64" fill="none" stroke="#1e1e1e" stroke-width="0.3"/>
+                  <circle cx="100" cy="100" r="61" fill="none" stroke="#222" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="58" fill="none" stroke="#1e1e1e" stroke-width="0.3"/>
+                  <circle cx="100" cy="100" r="55" fill="none" stroke="#222" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="52" fill="none" stroke="#1e1e1e" stroke-width="0.3"/>
+                  <circle cx="100" cy="100" r="49" fill="none" stroke="#222" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="46" fill="none" stroke="#1e1e1e" stroke-width="0.3"/>
+                  <circle cx="100" cy="100" r="43" fill="none" stroke="#222" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="40" fill="none" stroke="#1e1e1e" stroke-width="0.3"/>
+                  <circle cx="100" cy="100" r="37" fill="none" stroke="#222" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="98" fill="url(#hg-tl)"/>
+                  <circle cx="100" cy="100" r="98" fill="url(#hg-tr)"/>
+                  <circle cx="100" cy="100" r="98" fill="url(#hg-vert)"/>
+                  <circle cx="100" cy="100" r="98" fill="url(#rim-light)"/>
+                  <circle id="vinyl-art-placeholder" cx="100" cy="100" r="30" fill="#2a2a2a"/>
                   <image id="vinyl-art" clip-path="url(#art-clip)" x="70" y="70" width="60" height="60" href=""/>
-                  <circle cx="100" cy="100" r="3" fill="#fafaf9"/>
+                  <circle cx="100" cy="100" r="5" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="0.5"/>
+                  <circle cx="100" cy="100" r="2" fill="#fafaf9"/>
                 </svg>
               </div>
-              <div class="vinyl__info">
-                <span class="vinyl__title" id="spotify-title">Not playing</span>
-                <span class="vinyl__artist" id="spotify-artist"></span>
+            </div>
+            <div class="vinyl__ticker">
+              <div class="vinyl__ticker-track" id="spotify-ticker">
+                <span>Nothing currently playing&nbsp;&nbsp;&bull;&nbsp;&nbsp;Nothing currently playing&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
+                <span>Nothing currently playing&nbsp;&nbsp;&bull;&nbsp;&nbsp;Nothing currently playing&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
