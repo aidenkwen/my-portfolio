@@ -15,41 +15,57 @@
   <body>
     <main class="case-study">
       <a href="/" class="case-study__back">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="13" y1="8" x2="3" y2="8"/><polyline points="7,4 3,8 7,12"/></svg>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" overflow="visible"><g class="arrow-group"><line class="arrow-line" x1="3" y1="8" x2="13" y2="8"/><polyline class="arrow-head" points="7,4 3,8 7,12"/></g></svg>
         Back
       </a>
-      <h1 class="case-study__title">Event Discovery</h1>
-      <p class="case-study__desc">This case study explores the design process behind an event discovery feature, covering user research, interaction design, and visual iteration.</p>
+      <h1 class="case-study__title">Modernizing high-volume event management</h1>
+      <p class="case-study__desc">How might we move a manual event registration system completely online?</p>
       <div class="case-study__meta">
         <div class="case-study__meta-item">
           <span class="case-study__meta-label">Role</span>
           <span class="case-study__meta-value">Product Designer</span>
         </div>
         <div class="case-study__meta-item">
-          <span class="case-study__meta-label">Team</span>
-          <span class="case-study__meta-value">Placeholder</span>
+          <span class="case-study__meta-label">Timeline</span>
+          <span class="case-study__meta-value">May–August 2025</span>
         </div>
         <div class="case-study__meta-item">
-          <span class="case-study__meta-label">Timeline</span>
-          <span class="case-study__meta-value">Placeholder</span>
+          <span class="case-study__meta-label">Skills</span>
+          <span class="case-study__meta-value">UX Research, UX Design, Interaction Design, Figma, Claude Code, Lucidchart</span>
         </div>
       </div>
       <section class="problem">
-        <span class="problem__badge">The problem</span>
+        <span class="problem__badge">Problem & Ideation</span>
         <h2 class="problem__heading">Users struggled to find events that matched their interests</h2>
-        <p class="problem__subtitle">Through user research and interviews, three main pain points emerged</p>
+        <p class="problem__subtitle">Stakeholder interviews revealed two core parts of the event workflow with clear room for improvement</p>
         <div class="problem__cards">
           <div class="problem__card">
-            <h3 class="problem__card-title">Discoverability</h3>
-            <p class="problem__card-text">Events were buried in feeds, making it hard for users to find relevant ones without deliberate searching.</p>
+            <h3 class="problem__card-title">Tracking guest data</h3>
+            <p class="problem__card-text">Staff relied on a single Excel sheet to log guest information such as names, seat counts, and registration status.</p>
+            <p class="problem__card-text">Because the spreadsheet was so dense, it was difficult to quickly discern details at a glance.</p>
           </div>
           <div class="problem__card">
-            <h3 class="problem__card-title">Personalization</h3>
-            <p class="problem__card-text">Recommendations weren't tailored — users saw the same events regardless of their preferences or history.</p>
+            <h3 class="problem__card-title">Tracking guest seating</h3>
+            <p class="problem__card-text">Staff used a 5-foot-tall whiteboard to plan table layouts and assign seats on event day.</p>
+            <p class="problem__card-text">While guests found it entertaining, working on such a large physical board was cumbersome for staff and contributed to long registration lines.</p>
+          </div>
+        </div>
+        <div class="bracket">
+          <svg class="bracket__svg" preserveAspectRatio="none"></svg>
+          <p class="bracket__label">Using the insights surfaced from user research, I translated user needs into a clear set of product features.</p>
+        </div>
+        <div class="solution__cards">
+          <div class="problem__card">
+            <h3 class="problem__card-title">Capacity snapshot</h3>
+            <p class="problem__card-text">Quick visibility into guest counts at each registration stage</p>
           </div>
           <div class="problem__card">
-            <h3 class="problem__card-title">Context</h3>
-            <p class="problem__card-text">Event listings lacked key details like distance, mutual friends attending, and social proof.</p>
+            <h3 class="problem__card-title">Registration statuses</h3>
+            <p class="problem__card-text">Clear identification of each guest's place in the registration flow</p>
+          </div>
+          <div class="problem__card">
+            <h3 class="problem__card-title">Seating chart</h3>
+            <p class="problem__card-text">Digital tabling diagrams capable of showing when tables exceeded their intended capacity</p>
           </div>
         </div>
       </section>

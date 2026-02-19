@@ -69,6 +69,7 @@ function interceptLinks() {
     if (!isInternalLink(anchor)) return;
 
     e.preventDefault();
+    anchor.classList.add('is-navigating');
     navigateTo(anchor.href);
   });
 }
