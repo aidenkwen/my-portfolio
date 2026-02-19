@@ -19,6 +19,7 @@ body {
   line-height: var(--leading-normal);
   color: var(--color-ink);
   background-color: var(--color-bg);
+  min-width: 1200px;
 }
 
 img,
