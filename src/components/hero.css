@@ -376,7 +376,7 @@
 }
 
 .vinyl__badge {
-  display: none;
+  display: block;
   position: absolute;
   top: var(--space-sm);
   right: var(--space-sm);
@@ -389,6 +389,7 @@
   padding: 2px 8px;
   border-radius: var(--radius-full);
   line-height: 1.4;
+  z-index: 1;
 }
 
 .vinyl__record {
@@ -440,7 +441,7 @@
 }
 
 .vinyl__ticker-label {
-  color: var(--color-border);
+  color: var(--color-ink-muted);
 }
 
 .vinyl__ticker-song {

@@ -51,7 +51,7 @@ export function initSpotify() {
         if (badgeEl) {
           if (!data.isPlaying && data.playedAt) {
             badgeEl.textContent = timeAgo(data.playedAt);
-            badgeEl.style.display = '';
+            badgeEl.style.display = 'block';
           } else {
             badgeEl.style.display = 'none';
           }
