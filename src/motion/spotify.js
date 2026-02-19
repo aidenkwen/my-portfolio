@@ -45,7 +45,6 @@ export function initSpotify() {
             bgEl.classList.remove('is-visible');
           }
         }
-        el.href = data.url || '#';
         el.classList.toggle('vinyl--playing', !!data.isPlaying);
 
         if (badgeEl) {

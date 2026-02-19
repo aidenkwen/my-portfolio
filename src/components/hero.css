@@ -340,14 +340,8 @@
   border: 1px solid var(--color-border);
   background: var(--color-surface);
   overflow: hidden;
-  text-decoration: none;
   color: inherit;
-  transition: box-shadow 0.2s ease;
   padding: var(--space-sm) var(--space-sm) 0;
-}
-
-.vinyl:hover {
-  box-shadow: var(--shadow-md);
 }
 
 .vinyl__box {
