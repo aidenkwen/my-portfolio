@@ -10,7 +10,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3em;
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: 500;
   color: var(--color-ink-muted);
   transition: color 0.15s ease;
@@ -123,6 +123,9 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: var(--leading-tight);
+}
+
+.problem .section__heading {
   margin-top: var(--space-lg);
 }
 
@@ -137,7 +140,7 @@
 
 .problem {
   text-align: center;
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-lg);
 }
 
 .problem .section__heading,
@@ -166,6 +169,7 @@
   font-family: var(--font-heading);
   font-size: var(--text-lg);
   font-weight: 700;
+  line-height: 1.35;
 }
 
 .problem__card-text {
@@ -228,8 +232,8 @@
   display: grid;
   grid-template-columns: 4fr 8fr;
   gap: var(--space-xl);
-  align-items: center;
-  margin-top: var(--space-2xl);
+  align-items: start;
+  margin-top: var(--space-lg);
 }
 
 .showcase__media {
@@ -244,6 +248,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 
 @media (max-width: 768px) {
   .section__heading {
@@ -265,4 +270,5 @@
   .showcase {
     grid-template-columns: 1fr;
   }
+
 }

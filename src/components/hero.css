@@ -357,8 +357,22 @@
   border: none;
   background: var(--color-surface);
   overflow: hidden;
+  text-decoration: none;
   color: inherit;
   padding: var(--space-sm) var(--space-sm) 0;
+  cursor: default;
+}
+
+.vinyl--has-url {
+  cursor: pointer;
+}
+
+.vinyl--has-url:hover .vinyl__record {
+  transform: translateY(-16px);
+}
+
+.vinyl--has-url.vinyl--playing:hover .vinyl__record {
+  animation: vinyl-spin-lift 2s linear infinite;
 }
 
 .vinyl__box {
@@ -426,6 +440,10 @@
 
 @keyframes vinyl-spin {
   to { transform: rotate(360deg); }
+}
+
+@keyframes vinyl-spin-lift {
+  to { transform: translateY(-16px) rotate(360deg); }
 }
 
 .vinyl__ticker {

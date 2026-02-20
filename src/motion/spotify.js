@@ -45,6 +45,8 @@ export function initSpotify() {
             bgEl.classList.remove('is-visible');
           }
         }
+        el.href = data.url || '#';
+        el.classList.toggle('vinyl--has-url', !!data.url);
         el.classList.toggle('vinyl--playing', !!data.isPlaying);
 
         if (badgeEl) {
@@ -59,7 +61,8 @@ export function initSpotify() {
         setTicker(defaultText);
         artEl.href.baseVal = '';
         if (placeholderEl) placeholderEl.style.display = '';
-        el.classList.remove('vinyl--playing');
+        el.href = '#';
+        el.classList.remove('vinyl--has-url', 'vinyl--playing');
         if (badgeEl) badgeEl.style.display = 'none';
         if (bgEl) bgEl.classList.remove('is-visible');
       }
@@ -67,7 +70,8 @@ export function initSpotify() {
       setTicker(defaultText);
       artEl.href.baseVal = '';
       if (placeholderEl) placeholderEl.style.display = '';
-      el.classList.remove('vinyl--playing');
+      el.href = '#';
+      el.classList.remove('vinyl--has-url', 'vinyl--playing');
       if (badgeEl) badgeEl.style.display = 'none';
       if (bgEl) bgEl.classList.remove('is-visible');
     }
