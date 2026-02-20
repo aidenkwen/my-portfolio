@@ -250,6 +250,121 @@
 .timeline__card .problem__card-text {
   text-wrap: pretty;
 }
+/* ── Horizontal Timeline ── */
+
+.timeline-h {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  max-width: 1080px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.timeline-h__line {
+  position: absolute;
+  top: 5px;
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  height: 1.5px;
+  background: var(--color-border);
+}
+
+.timeline-h__column {
+  position: relative;
+}
+
+.timeline-h__header {
+  position: relative;
+  padding-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-h__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-h__label {
+  display: block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-muted);
+  text-align: center;
+}
+
+.timeline-h__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ── Flowchart ── */
+
+.flowchart-section {
+  margin-top: var(--space-2xl);
+}
+
+.flowchart {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.flowchart__svg {
+  display: block;
+  width: 100%;
+  min-width: 800px;
+  height: auto;
+}
+
+/* ── Tooltip with squiggly underline ── */
+
+.tooltip {
+  position: relative;
+  cursor: help;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--color-ink-muted);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.tooltip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-ink);
+  color: var(--color-bg);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm, 6px);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+}
+
 /* ── Bracket Connector ── */
 
 .bracket {
@@ -374,6 +489,23 @@
 }
 
 
+/* ── Showcase Pinned (sticky text + stacked images) ── */
+
+.showcase--pinned {
+  align-items: start;
+}
+
+.showcase--pinned .showcase__text {
+  position: sticky;
+  top: var(--space-xl);
+}
+
+.showcase__media-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
 @media (max-width: 768px) {
   .section__heading {
     font-size: var(--text-2xl);
@@ -412,5 +544,22 @@
 
   .showcase {
     grid-template-columns: 1fr;
+  }
+
+  .showcase--pinned .showcase__text {
+    position: static;
+  }
+
+  .timeline-h {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-h__line {
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    right: auto;
+    width: 1.5px;
+    height: auto;
   }
 }
