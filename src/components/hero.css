@@ -357,18 +357,8 @@
   border: none;
   background: var(--color-surface);
   overflow: hidden;
-  text-decoration: none;
   color: inherit;
   padding: var(--space-sm) var(--space-sm) 0;
-  cursor: default;
-}
-
-.vinyl--has-url {
-  cursor: pointer;
-}
-
-.vinyl--has-url:hover .vinyl__box {
-  transform: translateY(-16px);
 }
 
 .vinyl__box {
@@ -379,7 +369,6 @@
   padding-top: var(--space-lg);
   border-radius: 16px;
   position: relative;
-  transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .vinyl__box-bg {

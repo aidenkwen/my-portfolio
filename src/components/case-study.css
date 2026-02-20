@@ -226,6 +226,60 @@
   margin-inline: auto;
 }
 
+/* ── Competitive Landscape ── */
+
+.landscape {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
+.landscape__existing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  grid-column: 1 / 4;
+}
+
+.landscape__solution {
+  position: relative;
+  padding: var(--space-lg);
+  text-align: left;
+  grid-column: 4;
+  grid-row: 1;
+  opacity: 0;
+}
+
+.landscape__solution-border {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.landscape__solution-border rect {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 2;
+  stroke-dasharray: 8 6;
+}
+
+.landscape__solution-content {
+  position: relative;
+  opacity: 0;
+}
+
+.problem__card-examples {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+  font-style: italic;
+  margin-top: var(--space-xs);
+}
+
 /* ── Showcase Section (4 / 8 split) ── */
 
 .showcase {
@@ -267,8 +321,26 @@
     height: 100px;
   }
 
-  .showcase {
+  .landscape {
     grid-template-columns: 1fr;
   }
 
+  .landscape__existing {
+    grid-template-columns: 1fr;
+    grid-column: 1;
+  }
+
+  .landscape__solution {
+    grid-column: 1;
+    grid-row: auto;
+    opacity: 1;
+  }
+
+  .landscape__solution-content {
+    opacity: 1;
+  }
+
+  .showcase {
+    grid-template-columns: 1fr;
+  }
 }

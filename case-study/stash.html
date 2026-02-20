@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>body { opacity: 0; }</style>
   </head>
   <body>
@@ -18,8 +22,8 @@
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" overflow="visible"><g class="arrow-group"><line class="arrow-line" x1="3" y1="8" x2="13" y2="8"/><polyline class="arrow-head" points="7,4 3,8 7,12"/></g></svg>
         Back
       </a>
-      <h1 class="case-study__title">Stash</h1>
-      <p class="case-study__desc">This case study details the design of Stash, a savings and rewards feature, covering onboarding flows, gamification, and data visualization.</p>
+      <h1 class="case-study__title">Turning shopping into saving</h1>
+      <p class="case-study__desc">Stash is an e-commerce experience that turns the act of checking out into an act of saving, helping compulsive shoppers build healthier habits without losing the thrill of checkout.</p>
       <div class="case-study__meta">
         <div class="case-study__meta-item">
           <span class="case-study__meta-label">Role</span>
@@ -27,30 +31,52 @@
         </div>
         <div class="case-study__meta-item">
           <span class="case-study__meta-label">Timeline</span>
-          <span class="case-study__meta-value">Placeholder</span>
+          <span class="case-study__meta-value">May–July 2025</span>
         </div>
         <div class="case-study__meta-item">
           <span class="case-study__meta-label">Skills</span>
-          <span class="case-study__meta-value">Placeholder</span>
+          <span class="case-study__meta-value">UX Research, UX Design, Interaction Design, Figma</span>
         </div>
       </div>
       <section class="problem">
-        <span class="problem__badge">The problem</span>
-        <h2 class="problem__heading">Users weren't engaging with savings features despite wanting to save more</h2>
-        <p class="problem__subtitle">Through onboarding data and user interviews, three barriers became clear</p>
-        <div class="problem__cards">
-          <div class="problem__card">
-            <h3 class="problem__card-title">Onboarding friction</h3>
-            <p class="problem__card-text">Setting up savings goals required too many steps, causing most users to drop off before finishing.</p>
+        <span class="section__badge">The Problem</span>
+        <h2 class="section__heading">How might we capture the essence of online shopping without the guilt?</h2>
+        <p class="section__subtitle">Interviewing self-described online shopping addicts revealed where existing e-commerce experiences often fall short.</p>
+        <div class="landscape">
+          <div class="landscape__existing">
+            <div class="problem__card">
+              <h3 class="problem__card-title">Budget trackers</h3>
+              <p class="problem__card-examples">e.g. Mint, Monarch</p>
+              <p class="problem__card-text">Track and visualize spending, but only after money is already gone.</p>
+            </div>
+            <div class="problem__card">
+              <h3 class="problem__card-title">Automated savings tools</h3>
+              <p class="problem__card-examples">e.g. Qapital, Acorns</p>
+              <p class="problem__card-text">Moves money automatically in the background. Effective for saving, but doesn't address impulse shopping.</p>
+            </div>
+            <div class="problem__card">
+              <h3 class="problem__card-title">Proactive budgeting tool</h3>
+              <p class="problem__card-examples">Notable Outlier: YNAB</p>
+              <p class="problem__card-text">Helps plan spending before it happens, but still doesn't intervene at the point of purchase.</p>
+            </div>
           </div>
-          <div class="problem__card">
-            <h3 class="problem__card-title">Motivation</h3>
-            <p class="problem__card-text">There was no sense of progress or reward — saving felt like a chore rather than something to look forward to.</p>
+          <div class="landscape__solution">
+            <svg class="landscape__solution-border"></svg>
+            <div class="landscape__solution-content">
+              <h3 class="problem__card-title">My solution</h3>
+              <p class="problem__card-text">A tool that simulates an online shopping experience in order to support reckless spenders at the moment they feel the urge to shop.</p>
+            </div>
           </div>
-          <div class="problem__card">
-            <h3 class="problem__card-title">Visibility</h3>
-            <p class="problem__card-text">Users couldn't easily see how their savings were growing over time, making it hard to stay committed.</p>
-          </div>
+        </div>
+      </section>
+      <section class="showcase">
+        <div class="showcase__text">
+          <h2 class="section__heading">Early explorations of the tabling system were really frustrating</h2>
+          <p class="section__subtitle">My first instinct was to have tables change color as they approached and exceeded maximum capacity. However, that conflicted with the need to reserve color for registration statuses so they remained easily scannable, even in a tabling view.</p>
+          <p class="section__subtitle">This unique problem required a unique solution, and I ended up on a solution partially inspired by the stamina bar from <em>The Legend of Zelda: Breath of the Wild.</em></p>
+        </div>
+        <div class="showcase__media">
+          <img src="/stash sketches.png" alt="Early stash sketches" class="showcase__img" />
         </div>
       </section>
     </main>

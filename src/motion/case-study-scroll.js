@@ -3,6 +3,96 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+export function initLandscapeScroll() {
+  const landscape = document.querySelector('.landscape');
+  if (!landscape) return;
+
+  const existing = landscape.querySelector('.landscape__existing');
+  const solution = landscape.querySelector('.landscape__solution');
+  const borderSvg = solution?.querySelector('.landscape__solution-border');
+  const content = solution?.querySelector('.landscape__solution-content');
+  if (!existing || !borderSvg || !content) return;
+
+  requestAnimationFrame(() => {
+    // Calculate the offset to center 3 cards within the 4-column grid
+    // Offset = half of (solution column width + gap)
+    const solutionBox = solution.getBoundingClientRect();
+    const gap = parseFloat(getComputedStyle(landscape).columnGap) || 0;
+    const offset = (solutionBox.width + gap) / 2;
+
+    // Set initial centered position
+    gsap.set(existing, { x: offset });
+
+    // Build the solution border SVG with mask-based draw
+    const w = solutionBox.width;
+    const h = solutionBox.height;
+    const rx = 16;
+    const ns = 'http://www.w3.org/2000/svg';
+
+    borderSvg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+
+    // Shared rect attributes
+    const rectAttrs = { x: 1, y: 1, rx, ry: rx, width: w - 2, height: h - 2 };
+
+    // Mask: a solid stroke that draws in to reveal the dashed rect
+    const defs = document.createElementNS(ns, 'defs');
+    const mask = document.createElementNS(ns, 'mask');
+    mask.setAttribute('id', 'border-reveal');
+    const maskRect = document.createElementNS(ns, 'rect');
+    for (const [k, v] of Object.entries(rectAttrs)) maskRect.setAttribute(k, v);
+    maskRect.setAttribute('fill', 'none');
+    maskRect.setAttribute('stroke', 'white');
+    maskRect.setAttribute('stroke-width', '6'); // thick to fully reveal the dashed line
+    const perimeter = 2 * ((w - 2) + (h - 2)) - 8 * rx + 2 * Math.PI * rx;
+    maskRect.style.strokeDasharray = perimeter;
+    maskRect.style.strokeDashoffset = perimeter;
+    mask.appendChild(maskRect);
+    defs.appendChild(mask);
+    borderSvg.appendChild(defs);
+
+    // Visible dashed rect, masked by the draw
+    const dashedRect = document.createElementNS(ns, 'rect');
+    for (const [k, v] of Object.entries(rectAttrs)) dashedRect.setAttribute(k, v);
+    dashedRect.setAttribute('mask', 'url(#border-reveal)');
+    borderSvg.appendChild(dashedRect);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: landscape,
+        start: 'top 80%',
+        end: 'top 30%',
+        scrub: true,
+      },
+    });
+
+    // Phase 1: Cards shift left (finishes before border starts)
+    tl.to(existing, {
+      x: 0,
+      duration: 0.3,
+      ease: 'none',
+    }, 0);
+
+    // Phase 2: Fade in solution container, then draw the border
+    tl.to(solution, {
+      opacity: 1,
+      duration: 0.15,
+      ease: 'none',
+    }, 0.3);
+    tl.to(maskRect, {
+      strokeDashoffset: 0,
+      duration: 0.4,
+      ease: 'none',
+    }, 0.3);
+
+    // Phase 3: Content fades in (starts before border finishes)
+    tl.to(content, {
+      opacity: 1,
+      duration: 0.2,
+      ease: 'none',
+    }, 0.55);
+  });
+}
+
 export function initBracketScroll() {
   const svg = document.querySelector('.bracket__svg');
   if (!svg) return;

@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>body { opacity: 0; }</style>
   </head>
   <body>
@@ -18,8 +22,8 @@
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" overflow="visible"><g class="arrow-group"><line class="arrow-line" x1="3" y1="8" x2="13" y2="8"/><polyline class="arrow-head" points="7,4 3,8 7,12"/></g></svg>
         Back
       </a>
-      <h1 class="case-study__title">Tournament Brackets</h1>
-      <p class="case-study__desc">This case study covers the design of a tournament bracket system, including information architecture, real-time state, and responsive layout.</p>
+      <h1 class="case-study__title">Modernizing high-volume event management</h1>
+      <p class="case-study__desc">How might we move a manual event registration system completely online?</p>
       <div class="case-study__meta">
         <div class="case-study__meta-item">
           <span class="case-study__meta-label">Role</span>
@@ -27,30 +31,54 @@
         </div>
         <div class="case-study__meta-item">
           <span class="case-study__meta-label">Timeline</span>
-          <span class="case-study__meta-value">Placeholder</span>
+          <span class="case-study__meta-value">May–August 2025</span>
         </div>
         <div class="case-study__meta-item">
           <span class="case-study__meta-label">Skills</span>
-          <span class="case-study__meta-value">Placeholder</span>
+          <span class="case-study__meta-value">UX Research, UX Design, Interaction Design, Figma, Claude Code, Lucidchart</span>
         </div>
       </div>
       <section class="problem">
-        <span class="problem__badge">The problem</span>
-        <h2 class="problem__heading">Managing tournament brackets was confusing and error-prone</h2>
-        <p class="problem__subtitle">After reviewing existing workflows, three core issues stood out</p>
+        <span class="section__badge">The Problem</span>
+        <h2 class="section__heading">Golden Nugget Las Vegas' biggest events were being held back by outdated tools and processes</h2>
+        <p class="section__subtitle">Interviews with Golden Nugget Las Vegas' Executive Director of Marketing Operations and Special Events Manager revealed the two main components of their event management workflow</p>
         <div class="problem__cards">
           <div class="problem__card">
-            <h3 class="problem__card-title">Information architecture</h3>
-            <p class="problem__card-text">Bracket structures were difficult to parse at a glance, especially as tournaments scaled beyond 16 teams.</p>
+            <h3 class="problem__card-title">Guest data was too dense to manage efficiently</h3>
+            <p class="problem__card-text">Staff relied on a single Excel sheet to log guest information such as names, seat counts, and registration status.</p>
           </div>
           <div class="problem__card">
-            <h3 class="problem__card-title">Real-time state</h3>
-            <p class="problem__card-text">Users had no way to see live updates — they had to refresh the page to check if scores or matchups had changed.</p>
+            <h3 class="problem__card-title">Managing guest seating physically was cumbersome and contributed to long lines</h3>
+            <p class="problem__card-text">Staff used a 5-foot-tall whiteboard to plan table layouts and assign seats on event day.</p>
+          </div>
+        </div>
+        <div class="bracket">
+          <svg class="bracket__svg" preserveAspectRatio="none"></svg>
+          <p class="bracket__label">Using the insights surfaced from user research, I translated user needs into a clear set of product features.</p>
+        </div>
+        <div class="solution__cards">
+          <div class="problem__card">
+            <h3 class="problem__card-title">Capacity snapshot</h3>
+            <p class="problem__card-text">Quick visibility into guest counts at each registration stage (no table → reserved seats → claimed seats)</p>
           </div>
           <div class="problem__card">
-            <h3 class="problem__card-title">Responsive layout</h3>
-            <p class="problem__card-text">Bracket views were built for desktop and became unusable on mobile, where most users checked results.</p>
+            <h3 class="problem__card-title">Registration statuses</h3>
+            <p class="problem__card-text">Clear identification of each guest's place in the registration flow</p>
           </div>
+          <div class="problem__card">
+            <h3 class="problem__card-title">Seating chart</h3>
+            <p class="problem__card-text">Digital tabling diagrams capable of showing when tables exceeded their intended capacity (it wasn't uncommon for extra seats to be pulled over)</p>
+          </div>
+        </div>
+      </section>
+      <section class="showcase">
+        <div class="showcase__text">
+          <h2 class="section__heading">Early explorations of the tabling system were really frustrating</h2>
+          <p class="section__subtitle">My first instinct was to have tables change color as they approached and exceeded maximum capacity. However, that conflicted with the need to reserve color for registration statuses so they remained easily scannable, even in a tabling view.</p>
+          <p class="section__subtitle">This unique problem required a unique solution, and I ended up on a solution partially inspired by the stamina bar from <em>The Legend of Zelda: Breath of the Wild.</em></p>
+        </div>
+        <div class="showcase__media">
+          <img src="/stash sketches.png" alt="Early stash sketches" class="showcase__img" />
         </div>
       </section>
     </main>
