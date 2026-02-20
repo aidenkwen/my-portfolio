@@ -78,4 +78,12 @@ export function initTransition() {
   createOverlay();
   interceptLinks();
   revealPage();
+
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      overlay.style.pointerEvents = 'none';
+      gsap.set(overlay, { y: '100%' });
+      document.body.style.opacity = '1';
+    }
+  });
 }
