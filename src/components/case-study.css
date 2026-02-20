@@ -179,6 +179,77 @@
   margin-top: var(--space-md);
 }
 
+/* ── Timeline ── */
+
+.timeline {
+  max-width: 640px;
+  margin-inline: auto;
+  margin-top: var(--space-xl);
+  text-align: left;
+  position: relative;
+  padding-left: calc(12px + var(--space-md));
+}
+
+.timeline__line {
+  position: absolute;
+  left: 5px;
+  width: 1.5px;
+  background: var(--color-border);
+}
+
+.timeline__category {
+  position: relative;
+  margin-top: var(--space-lg);
+}
+
+.timeline__category:first-child {
+  margin-top: 0;
+}
+
+.timeline__category-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-muted);
+}
+
+.timeline__category-note {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.timeline__item {
+  position: relative;
+  margin-top: var(--space-md);
+}
+
+.timeline__dot {
+  position: absolute;
+  left: calc(-1 * var(--space-md) - 12px + 0.5px);
+  top: calc(var(--space-lg) + 4px);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  z-index: 1;
+}
+
+.timeline__track {
+  display: none;
+}
+
+.timeline__card {
+  width: 100%;
+}
+
+.timeline__card .problem__card-title,
+.timeline__card .problem__card-text {
+  text-wrap: pretty;
+}
 /* ── Bracket Connector ── */
 
 .bracket {

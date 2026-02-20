@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tournament Brackets — Aiden Kwen</title>
+    <title>Tournament Registration — Aiden Kwen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,8 +22,8 @@
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" overflow="visible"><g class="arrow-group"><line class="arrow-line" x1="3" y1="8" x2="13" y2="8"/><polyline class="arrow-head" points="7,4 3,8 7,12"/></g></svg>
         Back
       </a>
-      <h1 class="case-study__title">Modernizing high-volume event management</h1>
-      <p class="case-study__desc">How might we move a manual event registration system completely online?</p>
+      <h1 class="case-study__title">Tournament registration made smarter</h1>
+      <p class="case-study__desc">The existing tournament registration process at Golden Nugget Las Vegas required hours of manual balancing, so I redesigned it and introduced a seating experience that streamlined staff workflows.</p>
       <div class="case-study__meta">
         <div class="case-study__meta-item">
           <span class="case-study__meta-label">Role</span>
@@ -40,34 +40,54 @@
       </div>
       <section class="problem">
         <span class="section__badge">The Problem</span>
-        <h2 class="section__heading">Golden Nugget Las Vegas' biggest events were being held back by outdated tools and processes</h2>
-        <p class="section__subtitle">Interviews with Golden Nugget Las Vegas' Executive Director of Marketing Operations and Special Events Manager revealed the two main components of their event management workflow</p>
-        <div class="problem__cards">
-          <div class="problem__card">
-            <h3 class="problem__card-title">Guest data was too dense to manage efficiently</h3>
-            <p class="problem__card-text">Staff relied on a single Excel sheet to log guest information such as names, seat counts, and registration status.</p>
+        <h2 class="section__heading">The first thing I learned about the Golden Nugget's Special Events team’s operations was how many problems their tournament registration tool was causing them</h2>
+        <div class="timeline">
+          <div class="timeline__line"></div>
+          <div class="timeline__category">
+            <span class="timeline__category-label">Pre-Event</span>
           </div>
-          <div class="problem__card">
-            <h3 class="problem__card-title">Managing guest seating physically was cumbersome and contributed to long lines</h3>
-            <p class="problem__card-text">Staff used a 5-foot-tall whiteboard to plan table layouts and assign seats on event day.</p>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="problem__card timeline__card">
+              <h3 class="problem__card-title">Staff uploads invitee list received from Database Marketing department (40,000–60,000 rows)</h3>
+              <p class="problem__card-text">To better understand staff's current workflow, I began by interviewing GNLV's Director of Marketing Operations and volunteered at a blackjack tournament to see the tool used in a live tournament environment firsthand.</p>
+            </div>
           </div>
-        </div>
-        <div class="bracket">
-          <svg class="bracket__svg" preserveAspectRatio="none"></svg>
-          <p class="bracket__label">Using the insights surfaced from user research, I translated user needs into a clear set of product features.</p>
-        </div>
-        <div class="solution__cards">
-          <div class="problem__card">
-            <h3 class="problem__card-title">Capacity snapshot</h3>
-            <p class="problem__card-text">Quick visibility into guest counts at each registration stage (no table → reserved seats → claimed seats)</p>
+
+          <div class="timeline__category">
+            <span class="timeline__category-label">Registration Flow <span class="timeline__category-note">(repeated every round)</span></span>
           </div>
-          <div class="problem__card">
-            <h3 class="problem__card-title">Registration statuses</h3>
-            <p class="problem__card-text">Clear identification of each guest's place in the registration flow</p>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="problem__card timeline__card">
+              <h3 class="problem__card-title">Staff select round</h3>
+              <p class="problem__card-text">The "Event Name" dropdown contained every round (including mulligan-eligible rounds) and depended on a corporate IT contact to remove outdated entries</p>
+            </div>
           </div>
-          <div class="problem__card">
-            <h3 class="problem__card-title">Seating chart</h3>
-            <p class="problem__card-text">Digital tabling diagrams capable of showing when tables exceeded their intended capacity (it wasn't uncommon for extra seats to be pulled over)</p>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="problem__card timeline__card">
+              <h3 class="problem__card-title">Staff records player information</h3>
+              <p class="problem__card-text">Staff records each player's payment method before confirming their registration for the selected round.</p>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="problem__card timeline__card">
+              <h3 class="problem__card-title">Player draws a table & seat card</h3>
+              <p class="problem__card-text">To distribute seating, players draw a random card from a basket that lists a table and seat number.</p>
+            </div>
+          </div>
+
+          <div class="timeline__category">
+            <span class="timeline__category-label">Post-Event</span>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="problem__card timeline__card">
+              <h3 class="problem__card-title">Staff export spreadsheets and manually balance them</h3>
+              <p class="problem__card-text">At the end of the day, staff balance the sheets to ensure all exported data was accurate, a necessary step given how error-prone the current system was</p>
+            </div>
           </div>
         </div>
       </section>
